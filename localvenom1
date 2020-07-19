@@ -1,17 +1,13 @@
 #!/bin/bash
 
-# *Bismillah*
-
 #######################
 #a script by lazy-pwny#
 #######################
 
-#easy windows pwner tool (v i², i € C)
+# emojiler hre distroda gözükmeyebilir
 
 #bash(baş) script sevenler derneği tarafından hazırlanmıştır.
-#lisansa gerek gormedim ama soran olursa GNU 3
-
-#sadelik iyidir guzel olursa devami da gelir.
+#lisansa gerek yoq ama soran olursa GNU 3
 
 #renkler.
 kirmizi="\e[91m"
@@ -30,7 +26,7 @@ lhosy=$(ip route | awk 'NR==1{print $9}')
 fi
 
 lpt="666"
-vn="duck" # bittiğinde (duck.exe) olacak ;)
+vn="duck" # bittiğinde (duck.exe) olacak (deep gönderme)
 
 echo -e "your local IP: ${turuncu}${lhost}${tp}"
 echo $tire
