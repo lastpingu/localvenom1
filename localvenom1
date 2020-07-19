@@ -34,9 +34,9 @@ echo $tire
 #¿Help?
 
 if [[ $1 = "" ]] ; then
-	echo -e "${yesil}./lazyScript7.bash ${mavi}i:$tp (Easy, interface mode.)$tp"
-	echo -e "${yesil}./lazyScript7.bash ${turuncu}<LHOST> <LPORT> <VIRUSNAME>:$tp (Very Easy, basic mode.'if you don't know just give <d>')$tp"
-	echo -e "${yesil}./lazyScript7.bash ${mavi}a:$tp (Ultra Very Easy, Automatic mode.)$tp"
+	echo -e "${yesil}./localvenom1 ${mavi}i:$tp (Easy, interface mode.)$tp"
+	echo -e "${yesil}./localvenom1 ${turuncu}<LHOST> <LPORT> <VIRUSNAME>:$tp (Very Easy, basic mode.'if you don't know just give <d>')$tp"
+	echo -e "${yesil}./localvenom1 ${mavi}a:$tp (Ultra Very Easy, Automatic mode.)$tp"
 	exit
 	echo $tire
 fi
