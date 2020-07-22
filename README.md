@@ -8,3 +8,4 @@ cd localvenom1
 chmod +x localvenom1
 ./localvenom
 ```
+{hakkında} **local venom** deneme amaçlı local ağda basit venomlar oluşturmanızı sağlar temelinde msfvenom kullanır
